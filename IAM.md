@@ -45,3 +45,18 @@ When create user, can give user access type <br>
 * New users with Programmatic Access will be assigned Access Key ID & Secret Access Key when first created
 * Access Key ID & Secret Access Key can only be viewed once. If lost, can regenerated. 
 
+## Some thinking about IAM
+* Least Privilage - give users the minimum amount of access required
+* Create Group - assign users to groups 
+    - users automatically inherit permission
+    - policay documents give permissions to the group
+* Secret Access Key - only can be seen once
+    - delete and regenerate to create new one
+    - if the secret access key changed, need to run aws configuration again
+    - So, should give each developer their own access key, don't share one access key
+* Roles are better options
+    - allow user access resource without Access Key IDs and Secret Access Keys
+    - roles are prefered from a security perspective
+    - roles are contorlled by policies
+    - updating on roles will affect immediately 
+    - can attach or detach roles on running EC2 instances without shop or termination
