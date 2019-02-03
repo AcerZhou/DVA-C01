@@ -60,3 +60,30 @@ When create user, can give user access type <br>
     - roles are contorlled by policies
     - updating on roles will affect immediately 
     - can attach or detach roles on running EC2 instances without shop or termination
+
+## IAM 3 types of policies 
+* Managed Policies 
+* Customer Managed Policies
+* Inline Policies
+
+### Managed Policies
+- an IAM policy created and administrated by AWS
+- For common use cases based on job function 
+- Allow assign appropriate permissions to users, groups, and roles without having to write the policy yourself
+- A single managed policy can be attached to multiple users, groups, or roles within the same AWS account and across different accounts
+- AWS Managed Policy's permission definition can not be changed 
+
+### Customer Managed Policies
+- a standalone policy
+- User create and administer inside own AWS account 
+- The policy can be attached to multiple users, groups, and roles, only within own account
+- Can be created based on Managed Policy and customise it to fit the requirements of the organisation
+- Recommended use cases where Managed Policy dont meet the needs of environment
+
+### Inline Policy
+- IAM policy which is actually embedded within the user, group, or role to which it applies
+- This is a strict 1:1 relationship between the entity and the policy
+- When the user, group, role are being deleted, inline policy will be deleted as well
+- AWS recommends using Managed Policy over Inline Policy
+- Inline Policy are useful when the policy should only be applied on single user, group, or role
+
